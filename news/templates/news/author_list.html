@@ -1,0 +1,6 @@
+{% for author in author_list %}
+    <ul>
+    <a href="{% url 'news:article-detail' author.author %}">{{ forloop.counter }}. {{ author.first_name }} {{ author.last_name }}</a>
+    </ul>
+
+{% endfor %}

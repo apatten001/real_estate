@@ -1,0 +1,52 @@
+{% include 'houses/base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}{% endblock %}
+</head>
+<body>
+{% block content %}
+    <div class="container">
+    <h1>Home Listings</h1>
+    <div class="container col-12">
+    {% if request.Get.q %}
+
+    <div class="row mb-3">
+        <div>
+            Searched for <b>{{request.GET.q}}</b>
+            <hr/>
+        </div>
+        {% else %}
+       {% include 'houses/snippets/search_form.html' %}
+        {% endif %}
+    </div>
+    </div>
+<div class="container">
+         <div class="row">
+
+{% for obj in object_list%}
+
+             <div class="card col-4 mt-4 mx-auto">
+                {% if obj.img %}
+                    <a href="{{ obj.get_absolute_url }}"><img class="card-img-top" src="{{ obj.img.url }}" alt="Card image cap" height="200px" width="200px"></a>
+                 {% endif %}
+                <div class="card-body">
+                  <h5 class="card-title">{{ obj.address}}</h5>
+                  <p class="card-text">{{ obj.city }}, {{ obj.state }} {{ obj.zip_code }}</p>
+                    <p class="card-text"  style="text-align: right">Price: ${{ obj.cost }}<br>beds:{{ obj.number_of_bed }}   baths:{{ obj.number_of_bath }}</p>
+                    <p style="text-align: right">sq ft: {{ obj.sq_ft }}</p>
+                  <p class="card-text"><small class="text-muted"> Listed {{ obj.list_date| timesince }} ago</small></p>
+                </div>
+            </div>
+
+{% endfor %}
+     </div>
+    </div>
+    <div class="container">
+    <a href="{% url 'houses:list' %}"><button class="btn btn-primary" type="button" style="text-align: center;">More Listings</button></a>
+    </div>
+{% endblock %}
+</body>
+</html>

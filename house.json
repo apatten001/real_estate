@@ -1,0 +1,112 @@
+[
+{
+  "address": "711 Main St.",
+  "city": "Magnolia",
+  "state": "DE",
+  "zip_code": 19901,
+  "number_of_bed":3,
+  "number_of_bath": 1.5,
+  "year_built": 1999,
+  "sq_ft": 2350,
+  "cost":139999
+},
+  {
+  "address": "412 Main St.",
+  "city": "Magnolia",
+  "state": "DE",
+  "zip_code": 19901,
+  "number_of_bed":3,
+  "number_of_bath": 1.5,
+  "year_built": 1999,
+  "sq_ft": 2350,
+  "cost":139999
+},
+  {
+  "address": "124 Main St.",
+  "city": "Magnolia",
+  "state": "DE",
+  "zip_code": 19901,
+  "number_of_bed":3,
+  "number_of_bath": 1.5,
+  "year_built": 1999,
+  "sq_ft": 2150,
+  "cost":159999
+},
+  {
+  "address": "111 South St.",
+  "city": "Magnolia",
+  "state": "DE",
+  "zip_code": 19901,
+  "number_of_bed":3,
+  "number_of_bath": 2,
+  "year_built": 1991,
+  "sq_ft": 2310,
+  "cost":149999
+},
+  {
+  "address": "224 South St.",
+  "city": "Magnolia",
+  "state": "DE",
+  "zip_code": 19901,
+  "number_of_bed":4,
+  "number_of_bath": 1.5,
+  "year_built": 1989,
+  "sq_ft": 2550,
+  "cost":189999
+},
+    {
+  "address": "118 Peach St.",
+  "city": "Dover",
+  "state": "DE",
+  "zip_code": 19901,
+  "number_of_bed":4,
+  "number_of_bath": 1.5,
+  "year_built": 1989,
+  "sq_ft": 2550,
+  "cost":189999
+},
+    {
+  "address": "234 Peach St.",
+  "city": "Dover",
+  "state": "DE",
+  "zip_code": 19901,
+  "number_of_bed":4,
+  "number_of_bath": 1.5,
+  "year_built": 1989,
+  "sq_ft": 2750,
+  "cost":189999
+},
+    {
+  "address": "224 Oregon St.",
+  "city": "Dover",
+  "state": "DE",
+  "zip_code": 19901,
+  "number_of_bed":3,
+  "number_of_bath": 1.5,
+  "year_built": 1989,
+  "sq_ft": 2540,
+  "cost":189999
+},
+    {
+  "address": "318 Oregon St.",
+  "city": "Dover",
+  "state": "DE",
+  "zip_code": 19901,
+  "number_of_bed":2,
+  "number_of_bath": 1.5,
+  "year_built": 1989,
+  "sq_ft": 2150,
+  "cost":189999
+},
+    {
+  "address": "243 Oregon St.",
+  "city": "Dover",
+  "state": "DE",
+  "zip_code": 19901,
+  "number_of_bed":3,
+  "number_of_bath": 1.5,
+  "year_built": 1989,
+  "sq_ft": 2550,
+  "cost":189999
+}
+  ]

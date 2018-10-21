@@ -1,0 +1,20 @@
+{% include 'houses/base.html' %}
+    <title>{{ article_list }}</title>
+</head>
+<body>
+<br>
+<br>
+{% block content %}
+{% for article in article_list %}
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <a href="{% url 'news:author-detail' article.id %}"><h3>{{ article.author }}  | <span class=""><small>{{ article.timestamp | date}}</small></span></h3>
+                <p>{{ article.Title | truncatewords:10 | title}}</p></a>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+{% endblock %}
+</body>
+</html>

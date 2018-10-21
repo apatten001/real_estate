@@ -1,0 +1,16 @@
+{% include 'houses/base.html' %}
+<div class="container">
+<div class="row">
+<div class="col text-center">
+{% if object.img %}
+<img src="{{object.img.url }}" height="200px" width="300px">
+{% endif %}
+<br>
+{{ object.address }}<br>
+{{ object.city }}, {{ object.state }} {{ object.zip_code }}
+</div>
+</div>
+</div>
+{% include 'houses/snippets/footer.html' %}
+</body>
+</html>
