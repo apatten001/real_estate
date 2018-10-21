@@ -6,8 +6,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'houses/style.css' %}">
 
 <body>
-
-    <header class="masthead" style="background-size: cover;background-position: center;">
+    <header class="masthead" style="background-image:url('../../static/houses/img/Home pic.jpg');background-size: cover;background-position: center;">
         <div class="overlay" style="background-color: #30475e;"></div>
         <div class="container">
             <div class="row">
@@ -79,7 +78,6 @@
             </div>
         </div>
     </div>
-    {% include 'houses/snippets/footer.html' %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
     <script src="{% static 'assets/js/Card-Carousel.js' %}"></script>
@@ -87,6 +85,7 @@
 {% endblock %}
 </div>
 </body>
+{% include 'houses/snippets/footer.html' %}
 
 
 </html>

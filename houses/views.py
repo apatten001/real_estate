@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView,DetailView
+from django.views.generic import ListView,DetailView,TemplateView
 from .models import HomeListing
 from news.models import Author, NewsArticle
 from django.db.models.query import Q
@@ -48,3 +48,13 @@ class HomeListView(ListView):
 class HomeDetailView(DetailView):
 
     queryset = HomeListing.objects.all()
+
+
+class ContactView(TemplateView):
+
+    template_name = 'houses/contact.html'
+
+
+class AboutView(TemplateView):
+
+    template_name = 'houses/about.html'
