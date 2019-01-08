@@ -3,6 +3,9 @@ from .models import Author,NewsArticle
 from django.urls import reverse_lazy, reverse
 from django.views.generic import (CreateView, UpdateView,
                                   DeleteView, ListView, DetailView)
+from .forms import ArticleForm
+from django.shortcuts import redirect
+from django.contrib import messages
 
 
 # Create your views here.
@@ -21,7 +24,7 @@ class AuthorListView(ListView):
     Shows a list of all active authors
     '''
     context_object_name = 'author_list'
-    paginate_by = 5
+    paginate_by = 20
 
     queryset = Author.objects.all()
 
@@ -79,4 +82,20 @@ class AuthorDeleteView(DeleteView):
 
     model = Author
     success_url = reverse_lazy('author-list')
+
+
+def article_form_view(request):
+
+    if request.method == 'POST':
+        form = ArticleForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, message='Article created')
+            return redirect('news:article-list')
+    else:
+        form = ArticleForm()
+
+    return render(request, 'news/article_form.html', {'form':form})
+
+
 

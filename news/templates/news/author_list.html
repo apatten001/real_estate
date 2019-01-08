@@ -1,6 +1,47 @@
 {% for author in author_list %}
     <ul>
-    <a href="{% url 'news:article-detail' author.author %}">{{ forloop.counter }}. {{ author.first_name }} {{ author.last_name }}</a>
+    <a href="{% url 'news:author-detail' author.pk %}">{{ forloop.counter }}. {{ author.first_name }} {{ author.last_name }}</a>
     </ul>
 
 {% endfor %}
+<p id="first_paragraph"></p>
+<body>
+<script>
+    {#var myName = prompt('What is your name');#}
+    {#if(myName !=null){#}
+    {#    document.getElementById('first_paragraph').innerHTML = 'Hello ' + myName#}
+    {#} else {#}
+    {#    alert('please enter a name next time');#}
+    {#}#}
+
+
+        document.write('5 + 4 = ', 5 + 4, '<br/>');
+        document.write("you are using javascript",'<br/>');
+
+        var balance = 1569.54;
+        document.write('Your monthly payment: $', (balance/12).toFixed(2),'<br/>');
+
+        var randNum = 5
+        document.write('randNum += 5 = ', randNum += 5, '<br/>' );
+        document.write(Math.PI),  '<br/>';
+
+        var randStr = 'Im going' + 'to the mall' + ' every Saturday';
+        document.write(randStr + '<br/>')
+        document.write(randStr.slice(12,19) + '<br/>');
+        document.write(randStr.indexOf('mall') + '<br/>');
+        document.write(randStr.replace('mall', 'Car Wash'));
+
+        var randStrArray = randStr.split(' ');
+        document.write(randStrArray +'<br/>');
+        document.write(randStrArray[4]);
+
+        var strToSTyle = 'Helper'
+        document.write(strToSTyle.link('http://google.com'))
+
+
+
+
+
+
+</script>
+</body>

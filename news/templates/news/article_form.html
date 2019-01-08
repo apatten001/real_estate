@@ -1,0 +1,12 @@
+{% extends 'houses/base.html' %}
+
+{% block content %}
+
+    <form method="POST">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+    <button type="submit">Post</button>
+    </form>
+{% endblock %}
+
