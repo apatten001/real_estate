@@ -1,6 +1,7 @@
 {% include 'houses/base.html' %}
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,14 +14,23 @@
     <br>
 <div class="container">
     <div class="row">
-    <div class="col-8">
+    <div class="col-9 text-center">
 <h1>{{ object.Title| title }}</h1>
 {{ object.author }} | {{ object.timestamp | date }}
 <hr>
-<p>{{ object.content | linebreaksbr }}</p>
+        {% if object.content %}
+            <p>
+                {% lorem 3 p random %}
+            </p>
+            {% else %}
+        {% endif %}
+
     </div>
+
+
     </div>
 </div>
-{% endblock %}
 </body>
+{% endblock %}
+
 </html>

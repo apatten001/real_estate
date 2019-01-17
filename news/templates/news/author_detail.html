@@ -12,7 +12,7 @@
                         <h2 class="post-title">{{ article.Title | title }}</h2>
                         <h3 class="post-subtitle">{{ article.content | truncatewords:10 }}</h3>
                     </a>
-                    <p class="post-meta">Posted by<a href="{% url 'news:author-detail' article.id %}">{{ article.author }} published on {{ article.timestamp }}</a></p>
+                    <p class="post-meta">Posted by<a href="{% url 'news:article-detail' article.id %}">{{ article.author }} published on {{ article.timestamp }}</a></p>
                 </div>
                 <hr>
     {% endfor %}
