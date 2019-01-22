@@ -1,6 +1,16 @@
 from django.shortcuts import render, redirect
 from .forms import ContactForm
+from .serializers import ContactSerializer
+from .models import Contact
+
+from rest_framework import viewsets
 # Create your views here.
+
+
+class ContactViewSet(viewsets.ModelViewSet):
+
+    queryset = Contact.objects.all()
+    serializer_class = ContactSerializer
 
 
 def add_contact(request):

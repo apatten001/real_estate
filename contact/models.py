@@ -16,4 +16,6 @@ class Contact(models.Model):
     message = models.TextField()
 
     def __str__(self):
-        return self.subject
+        return '%s %s' % (self.first_name, self.last_name)
+
+
