@@ -17,11 +17,29 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
+from users.views import register
+from rest_framework import routers
+from faqs.views import FAQViewSet
+from houses.views import HomeListingViewSet
+from contact.views import ContactViewSet
+
+
+router = routers.DefaultRouter()
+
+router.register(r'faqs', FAQViewSet)
+router.register(r'houses', HomeListingViewSet)
+router.register(r'contacts', ContactViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('register/', register, name='register'),
+    path('api/', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('', include('houses.urls')),
     path('', include('news.urls')),
+    path('', include('contact.urls')),
+    path('', include('faqs.urls')),
+
 ]
 
 urlpatterns += staticfiles_urlpatterns()

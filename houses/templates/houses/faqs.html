@@ -1,0 +1,173 @@
+{% load static %}
+{% include 'houses/base.html' %}
+	<body>
+		
+	<div class="colorlib-loader"></div>
+
+	<div id="page">
+
+		<aside id="colorlib-breadcrumbs">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 breadcrumbs text-center">
+						<h2>FAQs</h2>
+						<p><span><a href="index.html">Home</a></span> / <span>FAQs</span></p>
+					</div>
+				</div>
+			</div>
+		</aside>
+
+		<div id="colorlib-container">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-9 content">
+                    <div class="col-4 mb-3">
+                        <img src="{% static 'stuff/images/questions.jpg' %}" class="img-responsive" alt="html5 bootstrap template">
+                    </div>
+                        <div>
+                            {% for object in page_obj%}
+                                <h1 class="blockquote">{{ object.question }}</h1>
+                                <blockquote class="blockquote">{{ object.answer }}</blockquote>
+                                <hr>
+                            {% endfor %}
+                        </div>
+                    <div class="row text-center">
+                        <p><strong>Showing</strong> {{ paginator.per_page }} articles per page</p>
+                        <div class="pagination">
+                            <span class="step-links">
+                            <ul class="pagination">
+                                {% if page_obj.has_previous %}
+                                    <li><a href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+                                {% endif %}
+
+                                <span class="current">
+                                    Page {{ page_obj.number }} of {{ paginator.num_pages }}.
+                                </span>
+
+                                {% if page_obj.has_next %}
+                                    <li><a href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+                                {% endif %}
+                                </ul>
+                                </span>
+                        </div>
+                    </div>
+					</div>
+					<div class="col-md-3">
+						<div class="sidebar">
+							<div class="side">
+								<div class="form-group">
+                                    <form method="get" action="{% url 'faqs:faqs' %}">
+									    <input  type="text" name="q" class="form-control" id="search" placeholder="Enter any key to search...">
+									    <button type="submit"  class="btn btn-primary"><i class="icon-search3"></i></button>
+                                    </form>
+								</div>
+							</div>
+							<div class="side">
+								<h2 class="sidebar-heading">Categories</h2>
+								<p>
+									<ul class="category">
+										<li><a href="#"><i class="icon-check"></i> Home</a></li>
+										<li><a href="#"><i class="icon-check"></i> About Me</a></li>
+										<li><a href="#"><i class="icon-check"></i> Blog</a></li>
+										<li><a href="#"><i class="icon-check"></i> Travel</a></li>
+										<li><a href="#"><i class="icon-check"></i> Lifestyle</a></li>
+										<li><a href="#"><i class="icon-check"></i> Fashion</a></li>
+										<li><a href="#"><i class="icon-check"></i> Health</a></li>
+									</ul>
+								</p>
+							</div>
+							<div class="side">
+								<h2 class="sidebar-heading">Recent Blog</h2>
+								<div class="f-blog">
+									<a href="blog.html" class="blog-img" style="background-image: url(../../static/stuff/images/blog-1.jpg);">
+									</a>
+									<div class="desc">
+										<h3><a href="blog.html">Be a designer</a></h3>
+										<p class="admin"><span>25 March 2018</span></p>
+									</div>
+								</div>
+								<div class="f-blog">
+									<a href="blog.html" class="blog-img" style="background-image: url(../../static/stuff/images/blog-2.jpg);">
+									</a>
+									<div class="desc">
+										<h3><a href="blog.html">How to build website</a></h3>
+										<p class="admin"><span>24 March 2018</span></p>
+									</div>
+								</div>
+								<div class="f-blog">
+									<a href="blog.html" class="blog-img" style="background-image: url(../../static/stuff/images/blog-3.jpg);">
+									</a>
+									<div class="desc">
+										<h3><a href="blog.html">Create website</a></h3>
+										<p class="admin"><span>23 March 2018</span></p>
+									</div>
+								</div>
+							</div>
+							<div class="side">
+								<h2 class="sidebar-heading">Instagram</h2>
+								<div class="instagram-entry">
+									<a href="#" class="instagram text-center" style="background-image: url(../../static/stuff/images/gallery-1.jpg);">
+									</a>
+									<a href="#" class="instagram text-center" style="background-image: url(../../static/stuff/images/gallery-2.jpg);">
+									</a>
+									<a href="#" class="instagram text-center" style="background-image: url(../../static/stuff/images/gallery-3.jpg);">
+									</a>
+									<a href="#" class="instagram text-center" style="background-image: url(../../static/stuff/images/gallery-4.jpg);">
+									</a>
+									<a href="#" class="instagram text-center" style="background-image: url(../../static/stuff/images/gallery-5.jpg);">
+									</a>
+									<a href="#" class="instagram text-center" style="background-image: url(../../static/stuff/images/gallery-6.jpg);">
+									</a>
+									<a href="#" class="instagram text-center" style="background-image: url(../../static/stuff/images/gallery-7.jpg);">
+									</a>
+									<a href="#" class="instagram text-center" style="background-image: url(../../static/stuff/images/gallery-8.jpg);">
+									</a>
+								</div>
+							</div>
+							<div class="side">
+								<div class="form-group">
+									<input type="text" class="form-control form-email text-center" id="email" placeholder="Enter your email">
+									<button type="submit" class="btn btn-primary btn-subscribe">Subscribe</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="colorlib-instagram">
+			<div class="row">
+				<div class="col-md-12 col-md-offset-0 colorlib-heading text-center">
+					<h2>Instagram</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="instagram-entry">
+					<a href="#" class="instagram text-center" style="background-image: url(../../static/stuff/images/gallery-1.jpg);">
+					</a>
+					<a href="#" class="instagram text-center" style="background-image: url(../../static/stuff/images/gallery-2.jpg);">
+					</a>
+					<a href="#" class="instagram text-center" style="background-image: url(../../static/stuff/images/gallery-3.jpg);">
+					</a>
+					<a href="#" class="instagram text-center" style="background-image: url(../../static/stuff/images/gallery-4.jpg);">
+					</a>
+					<a href="#" class="instagram text-center" style="background-image: url(../../static/stuff/images/gallery-5.jpg);">
+					</a>
+					<a href="#" class="instagram text-center" style="background-image: url(../../static/stuff/images/gallery-6.jpg);">
+					</a>
+					<a href="#" class="instagram text-center" style="background-image: url(../../static/stuff/images/gallery-7.jpg);">
+					</a>
+					<a href="#" class="instagram text-center" style="background-image: url(../../static/stuff/images/gallery-8.jpg);">
+					</a>
+				</div>
+			</div>
+		</div>
+		{% include 'houses/footer.html' %}
+	</div>
+
+	{% include 'houses/js.html' %}
+
+	</body>
+</html>
+

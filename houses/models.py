@@ -32,17 +32,42 @@ class HomeListing(models.Model):
     number_of_bath = models.DecimalField(decimal_places=1, max_digits=10,)
     year_built = models.IntegerField(blank=False)
     sq_ft = models.IntegerField()
-    img = models.ImageField(upload_to='house_photos', blank=True,null=True,
-                             default='default_home_pic.jpg')
+    img = models.ImageField(upload_to='house_photos', blank=True, null=True,
+                            default='beach.jpg')
     list_date = models.DateTimeField(auto_now_add=True)
     featured = models.BooleanField(default=False)
     cost = models.IntegerField(default=1)
 
     objects = HomeListingManager()
 
+    class Meta:
+
+        verbose_name_plural = 'Homes'
+
     def __str__(self):
         return self.address
 
     def get_absolute_url(self):
         return reverse('houses:detail', kwargs={'pk': self.pk})
+
+    def full_address(self):
+        return self.address + ', ' + self.city
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
