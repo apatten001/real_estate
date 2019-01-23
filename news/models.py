@@ -24,6 +24,7 @@ class NewsArticle(models.Model):
 
     Title = models.CharField(max_length=200)
     content = models.TextField()
+    image = models.ImageField(blank=True, null=True, default='https://picsum.photos/1100/700/?image=1067')
     author = models.ForeignKey(Author,  on_delete=models.CASCADE)
     timestamp = models.DateTimeField(auto_now_add=True)
 
