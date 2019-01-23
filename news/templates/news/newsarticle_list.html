@@ -8,8 +8,9 @@
     <div class="container">
         <div class="row">
             <div class="col-6">
-                <a href="{% url 'news:author-detail' article.id %}"><h3>{{ article.author }}  | <span class=""><small>{{ article.timestamp | date}}</small></span></h3>
-                <p>{{ article.Title | truncatewords:10 | title}}</p></a>
+                <a href="{% url 'news:author-detail' article.id %}"><h3>{{ article.Title | title }}</h3>
+                <p>{{ article.author | truncatewords:10 | title}}  | <span class="">
+                    <small>{{ article.timestamp | date}}</small></span></p></a>
             </div>
         </div>
     </div>

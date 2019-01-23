@@ -15,8 +15,10 @@
 <div class="container">
     <div class="row">
     <div class="col-9 text-center">
-<h1>{{ object.Title| title }}</h1>
-{{ object.author }} | {{ object.timestamp | date }}
+    <h1>{{ object.Title| title }}</h1>
+
+    <img class="img-thumbnail" src="{{ object.image }}" width="600" height="500">
+        <p>{{ object.author }} | {{ object.timestamp | date }}</p>
 <hr>
         {% if object.content %}
             <p>
@@ -32,5 +34,6 @@
 </div>
 </body>
 {% endblock %}
+{% include 'houses/footer.html' %}
 
 </html>
