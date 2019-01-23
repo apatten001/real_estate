@@ -29,7 +29,6 @@ class HomeListView(ListView):
     '''
 
     template_name = 'houses/homelisting_list.html'
-    paginate_by = 9
 
     def get_context_data(self,*args, **kwargs):
         context = super(HomeListView, self).get_context_data(*args, **kwargs)
