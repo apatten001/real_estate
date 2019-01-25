@@ -19,3 +19,9 @@ class Contact(models.Model):
         return '%s %s' % (self.first_name, self.last_name)
 
 
+class Subscribe(models.Model):
+
+    email = models.EmailField()
+
+    def __str__(self):
+        return self.email

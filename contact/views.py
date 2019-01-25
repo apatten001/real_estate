@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import ContactForm
+from .forms import ContactForm, SubscribeForm
 from .serializers import ContactSerializer
 from .models import Contact
 
@@ -24,3 +24,17 @@ def add_contact(request):
     else:
         form = ContactForm()
         return render(request, 'houses/contact.html', {'form': form})
+
+
+def add_subscriber(request):
+
+    if request.method == 'POST':
+        form = SubscribeForm(request.POST)
+        if form.is_valid():
+            subscribe = form.save()
+            subscribe.save()
+            return redirect('houses:home')
+    else:
+        form = SubscribeForm()
+        return render(request, 'houses/faqs.html', {'form': form})
+
