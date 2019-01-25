@@ -34,6 +34,3 @@ class NewsArticle(models.Model):
     def get_absolute_url(self):
         return reverse('news:article-detail', kwargs={'pk': self.pk})
 
-
-
-

@@ -2,20 +2,41 @@
     <title>{{ article_list }}</title>
 {% block content %}
 <body>
+<div id="page">
+<aside id="colorlib-breadcrumbs">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 breadcrumbs text-center">
+						<h2>Latest Articles</h2>
+						<p><span><a href="{% url 'houses:home' %}">Home</a></span> / <span>About</span></p>
+					</div>
+				</div>
+			</div>
+		</aside>
+   </div>
 <br>
-<br>
-{% for article in article_list %}
-    <div class="container">
+<div class="container">
+        <div class="container">
         <div class="row">
-            <div class="col-6">
-                <a href="{% url 'news:author-detail' article.id %}"><h3>{{ article.Title | title }}</h3>
-                <p>{{ article.author | truncatewords:10 | title}}  | <span class="">
-                    <small>{{ article.timestamp | date}}</small></span></p></a>
+            {% for article in article_list %}
+            <div class="col-6 mb-3">
+                <div class="card" style="width: 30rem;">
+                    <a href="{% url 'news:author-detail' article.id %}">
+                        <h3 class="card-text text-center">{{ article.Title | title }}</h3>
+                        <img class="card-img-top thumbnail" src="{{ article.image }}" alt="Card image cap" width="300px">
+                        <div class="card-body">
+                        <p class="card-text text-center">{{ article.author | truncatewords:10 | title}} |<span class="">
+                        <small>{{ article.timestamp | date}}</small></span></p></a>
+                    </div>
+                </div>
+            {% endfor %}
             </div>
         </div>
     </div>
-{% endfor %}
+</div>
 </body>
+    {% include 'houses/footer.html' %}
+    {% include 'houses/js.html' %}
 {% endblock %}
 
 </html>
