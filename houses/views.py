@@ -1,14 +1,12 @@
-from django.shortcuts import render, redirect
-from django.db.models.query import Q
 from django.db.models import Avg, Max, Min
+from django.db.models.query import Q
+from django.contrib import messages
 from django.views.generic import ListView, DetailView, TemplateView
+from rest_framework import viewsets
 
+from news.models import Author, NewsArticle
 from .models import HomeListing
 from .serializers import HomeListingSerializer
-from news.models import Author, NewsArticle
-
-
-from rest_framework import viewsets
 
 
 class HomeListingViewSet(viewsets.ModelViewSet):
@@ -28,7 +26,7 @@ class HomeListView(ListView):
 
     '''
 
-    template_name = 'houses/homelisting_list.html'
+    template_name = ['houses/homelisting_list.html', 'houses/footer.html']
 
     def get_context_data(self,*args, **kwargs):
         context = super(HomeListView, self).get_context_data(*args, **kwargs)
@@ -43,6 +41,7 @@ class HomeListView(ListView):
         context['avg_price'] = num.get('cost__avg')
         context['max_price'] = num.get('cost__max')
         context['min_price'] = num.get('cost__min')
+        context['recent_articles'] = NewsArticle.objects.all().order_by('-date')[:3]
 
         return context
 

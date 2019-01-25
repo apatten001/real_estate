@@ -1,95 +1,108 @@
 {% include 'houses/base.html' %}
 <div class="container">
-<div class="row">
-<div class="text-center col-9">
-{% if object.img %}
-<img src="{{object.img.url }}" height="200px" width="300px">
-{% endif %}
-<br>
-{{ object.address }}<br>
-{{ object.city }}, {{ object.state }} {{ object.zip_code }}
-<div class="col-md-3">
-						<div class="sidebar">
-							<div class="side">
-								<div class="form-group">
-									<input type="text" class="form-control" id="search" placeholder="Enter any key to search...">
-									<button type="submit" class="btn btn-primary"><i class="icon-search3"></i></button>
-								</div>
-							</div>
-							<div class="side">
-								<h2 class="sidebar-heading">Categories</h2>
-								<p>
-									<ul class="category">
-										<li><a href="#"><i class="icon-check"></i> Home</a></li>
-										<li><a href="#"><i class="icon-check"></i> About Me</a></li>
-										<li><a href="#"><i class="icon-check"></i> Blog</a></li>
-										<li><a href="#"><i class="icon-check"></i> Travel</a></li>
-										<li><a href="#"><i class="icon-check"></i> Lifestyle</a></li>
-										<li><a href="#"><i class="icon-check"></i> Fashion</a></li>
-										<li><a href="#"><i class="icon-check"></i> Health</a></li>
-									</ul>
-								</p>
-							</div>
-							<div class="side">
-								<h2 class="sidebar-heading">Recent Blog</h2>
-								<div class="f-blog">
-									<a href="blog.html" class="blog-img" style="background-image: url(../../static/stuff/images/blog-1.jpg);">
-									</a>
-									<div class="desc">
-										<h3><a href="blog.html">Be a designer</a></h3>
-										<p class="admin"><span>25 March 2018</span></p>
-									</div>
-								</div>
-								<div class="f-blog">
-									<a href="blog.html" class="blog-img" style="background-image: url(../../static/stuff/images/blog-2.jpg);">
-									</a>
-									<div class="desc">
-										<h3><a href="blog.html">How to build website</a></h3>
-										<p class="admin"><span>24 March 2018</span></p>
-									</div>
-								</div>
-								<div class="f-blog">
-									<a href="blog.html" class="blog-img" style="background-image: url(../../static/stuff/images/blog-3.jpg);">
-									</a>
-									<div class="desc">
-										<h3><a href="blog.html">Create website</a></h3>
-										<p class="admin"><span>23 March 2018</span></p>
-									</div>
-								</div>
-							</div>
-							<div class="side">
-								<h2 class="sidebar-heading">Instagram</h2>
-								<div class="instagram-entry">
-									<a href="#" class="instagram text-center" style="background-image: url(../../static/stuff/images/gallery-1.jpg);">
-									</a>
-									<a href="#" class="instagram text-center" style="background-image: url(../../static/stuff/images/gallery-2.jpg);">
-									</a>
-									<a href="#" class="instagram text-center" style="background-image: url(../../static/stuff/images/gallery-3.jpg);">
-									</a>
-									<a href="#" class="instagram text-center" style="background-image: url(../../static/stuff/images/gallery-4.jpg);">
-									</a>
-									<a href="#" class="instagram text-center" style="background-image: url(../../static/stuff/images/gallery-5.jpg);">
-									</a>
-									<a href="#" class="instagram text-center" style="background-image: url(../../static/stuff/images/gallery-6.jpg);">
-									</a>
-									<a href="#" class="instagram text-center" style="background-image: url(../../static/stuff/images/gallery-7.jpg);">
-									</a>
-									<a href="#" class="instagram text-center" style="background-image: url(../../static/stuff/images/gallery-8.jpg);">
-									</a>
-								</div>
-							</div>
-							<div class="side">
-								<div class="form-group">
-									<input type="text" class="form-control form-email text-center" id="email" placeholder="Enter your email">
-									<button type="submit" class="btn btn-primary btn-subscribe">Subscribe</button>
-								</div>
-							</div>
-						</div>
-					</div>
+    <div class="row">
+        <div class="text-center col-9">
+            {% if object.img %}
+                <img src="{{ object.img.url }}" height="200px" width="300px">
+            {% endif %}
+            <br>
+            {{ object.address }}<br>
+            {{ object.city }}, {{ object.state }} {{ object.zip_code }}
+            <div class="col-md-3">
+                <div class="sidebar">
+                    <div class="side">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="search"
+                                   placeholder="Enter any key to search...">
+                            <button type="submit" class="btn btn-primary"><i class="icon-search3"></i></button>
+                        </div>
+                    </div>
+                    <div class="side">
+                        <h2 class="sidebar-heading">Categories</h2>
+                        <p>
+                        <ul class="category">
+                            <li><a href="#"><i class="icon-check"></i> Home</a></li>
+                            <li><a href="#"><i class="icon-check"></i> About Me</a></li>
+                            <li><a href="#"><i class="icon-check"></i> Blog</a></li>
+                            <li><a href="#"><i class="icon-check"></i> Travel</a></li>
+                            <li><a href="#"><i class="icon-check"></i> Lifestyle</a></li>
+                            <li><a href="#"><i class="icon-check"></i> Fashion</a></li>
+                            <li><a href="#"><i class="icon-check"></i> Health</a></li>
+                        </ul>
+                        </p>
+                    </div>
+                    <div class="side">
+                        <h2 class="sidebar-heading">Recent Blog</h2>
+                        <div class="f-blog">
+                            <a href="blog.html" class="blog-img"
+                               style="background-image: url(../../static/stuff/images/blog-1.jpg);">
+                            </a>
+                            <div class="desc">
+                                <h3><a href="blog.html">Be a designer</a></h3>
+                                <p class="admin"><span>25 March 2018</span></p>
+                            </div>
+                        </div>
+                        <div class="f-blog">
+                            <a href="blog.html" class="blog-img"
+                               style="background-image: url(../../static/stuff/images/blog-2.jpg);">
+                            </a>
+                            <div class="desc">
+                                <h3><a href="blog.html">How to build website</a></h3>
+                                <p class="admin"><span>24 March 2018</span></p>
+                            </div>
+                        </div>
+                        <div class="f-blog">
+                            <a href="blog.html" class="blog-img"
+                               style="background-image: url(../../static/stuff/images/blog-3.jpg);">
+                            </a>
+                            <div class="desc">
+                                <h3><a href="blog.html">Create website</a></h3>
+                                <p class="admin"><span>23 March 2018</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="side">
+                        <h2 class="sidebar-heading">Instagram</h2>
+                        <div class="instagram-entry">
+                            <a href="#" class="instagram text-center"
+                               style="background-image: url(../../static/stuff/images/gallery-1.jpg);">
+                            </a>
+                            <a href="#" class="instagram text-center"
+                               style="background-image: url(../../static/stuff/images/gallery-2.jpg);">
+                            </a>
+                            <a href="#" class="instagram text-center"
+                               style="background-image: url(../../static/stuff/images/gallery-3.jpg);">
+                            </a>
+                            <a href="#" class="instagram text-center"
+                               style="background-image: url(../../static/stuff/images/gallery-4.jpg);">
+                            </a>
+                            <a href="#" class="instagram text-center"
+                               style="background-image: url(../../static/stuff/images/gallery-5.jpg);">
+                            </a>
+                            <a href="#" class="instagram text-center"
+                               style="background-image: url(../../static/stuff/images/gallery-6.jpg);">
+                            </a>
+                            <a href="#" class="instagram text-center"
+                               style="background-image: url(../../static/stuff/images/gallery-7.jpg);">
+                            </a>
+                            <a href="#" class="instagram text-center"
+                               style="background-image: url(../../static/stuff/images/gallery-8.jpg);">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="side">
+                        <div class="form-group">
+                            <input type="text" class="form-control form-email text-center" id="email"
+                                   placeholder="Enter your email">
+                            <button type="submit" class="btn btn-primary btn-subscribe">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-</div>
-</div>
-{% include 'houses/footer.html' %}
+        </div>
+    </div>
+    {% include 'houses/footer.html' %}
 
-</body>
-</html>
+    </body>
+    </html>

@@ -11,19 +11,19 @@
 								<li class="has-dropdown">
 									<a href="{% url 'news:article-list' %}">Blog</a>
 									<ul class="dropdown">
-										<li class="dropdown-item"><a href="{% url 'houses:about' %}">Games</a></li>
-										<li><a href="#">Video</a></li>
-										<li><a href="#">Read</a></li>
-										<li><a href="#">Lifestyle</a></li>
+										<li class="dropdown-item"><a href="{% url 'houses:about' %}">Ownership</a></li>
+										<li><a href="#">Rentals</a></li>
+										<li><a href="#">Lease</a></li>
+										<li><a href="#">Buying</a></li>
 									</ul>
 								</li>
 								<li><a href="{% url 'faqs:faqs'%}">FAQs</a></li>
 								<li><a href="{% url 'houses:about' %}">About Me</a></li>
 								<li><a href="{% url 'contact:add-contact' %}">Contact</a></li>
                                 {% if user.is_authenticated %}
-                                    <li><a href="{% url 'contact:add-contact' %}">Logout</a></li>
+                                    <li><a href="{% url 'logout' %}">Logout</a></li>
                                 {% else %}
-                                    <li><a href="">Login</a></li>
+                                    <li><a href="{% url 'login' %}">Login</a></li>
 								    <li><a href="{% url 'register' %}">Register</a></li>
                                 {% endif %}
 							</ul>

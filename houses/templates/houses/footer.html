@@ -5,26 +5,27 @@
 						<h2>Navigational</h2>
 						<p>
 							<ul class="colorlib-footer-links">
-								<li><a href="#"><i class="icon-check"></i> Home</a></li>
-								<li><a href="#"><i class="icon-check"></i> About Me</a></li>
-								<li><a href="#"><i class="icon-check"></i> Blog</a></li>
-								<li><a href="#"><i class="icon-check"></i> Travel</a></li>
-								<li><a href="#"><i class="icon-check"></i> Lifestyle</a></li>
-								<li><a href="#"><i class="icon-check"></i> Fashion</a></li>
-								<li><a href="#"><i class="icon-check"></i> Health</a></li>
+								<li><a href="{% url 'houses:home' %}"><i class="icon-check"></i> Home</a></li>
+								<li><a href="{% url 'houses:about' %}"><i class="icon-check"></i> About Me</a></li>
+								<li><a href="{% url 'news:article-list' %}"><i class="icon-check"></i> Blog</a></li>
+								<li><a href="{% url 'faqs:faqs' %}"><i class="icon-check"></i> FAQS</a></li>
+								<li><a href="{% url 'contact:add-contact' %}"><i class="icon-check"></i>Contact</a></li>
 							</ul>
 						</p>
 					</div>
 					<div class="col-md-3">
 						<h2>Recent Post</h2>
+                        {% for article in recent_article %}
 						<div class="f-blog">
-							<a href="blog.html" class="blog-img" style="background-image: url(../../static/stuff/images/blog-1.jpg);">
+							<a href="blog.html" class="blog-img"
+                               style="background-image: url({{ article.image }});">
 							</a>
 							<div class="desc">
-								<h3><a href="blog.html">Be a designer</a></h3>
-								<p class="admin"><span>25 March 2018</span></p>
+								<h3><a href="blog.html">{{ article.Title }}</a></h3>
+								<p class="admin"><span>{{ article.timestamp }}</span></p>
 							</div>
 						</div>
+                        {% endfor %}
 						<div class="f-blog">
 							<a href="blog.html" class="blog-img" style="background-image: url(../../static/stuff/images/blog-2.jpg);">
 							</a>
@@ -55,37 +56,25 @@
 							</ul>
 						</p>
 					</div>
-					<div class="col-md-3">
-						<h2>Cities</h2>
-						<p class="tags">
-                            {% for object in object_list %}
-                                <form method="get" action="{% url 'houses:home' %}">
-                                    <span><input type="submit" name="q" class="form-control tags" id="search" value="{{ object.city }}" placeholder="{{ object.city }}" ></span>
-
-
-                                    </form>
-{#							<span><a href="#"><i class="icon-tag"></i> Fashion</a></span>#}
-{#							<span><a href="#"><i class="icon-tag"></i> Life</a></span>#}
-{#							<span><a href="#"><i class="icon-tag"></i> Blog</a></span>#}
-{#							<span><a href="#"><i class="icon-tag"></i> Workout</a></span>#}
-{#							<span><a href="#"><i class="icon-tag"></i> Vacation</a></span>#}
-{#							<span><a href="#"><i class="icon-tag"></i> Travel</a></span>#}
-{#							<span><a href="#"><i class="icon-tag"></i> Exercise</a></span>#}
-{#							<span><a href="#"><i class="icon-tag"></i> Health</a></span>#}
-{#							<span><a href="#"><i class="icon-tag"></i> News</a></span>#}
-{#							<span><a href="#"><i class="icon-tag"></i> Model</a></span>#}
-{#							<span><a href="#"><i class="icon-tag"></i> Women</a></span>#}
-{#							<span><a href="#"><i class="icon-tag"></i> Animals</a></span>#}
-{#							<span><a href="#"><i class="icon-tag"></i> Nature</a></span>#}
-{#							<span><a href="#"><i class="icon-tag"></i> Art</a></span>#}
-{#							<span><a href="#"><i class="icon-tag"></i> Sea</a></span>#}
-{#							<span><a href="#"><i class="icon-tag"></i> Ocean</a></span>#}
-{#							<span><a href="#"><i class="icon-tag"></i> Office</a></span>#}
-{#							<span><a href="#"><i class="icon-tag"></i> Home</a></span>#}
-                            {% endfor %}
-						</p>
+                    <div class="col-md-3">
+						<h2 class="heading-2">Contact Information</h2>
+						<ul class="row contact-info-wrap row-pb-lg">
+							<li>
+								<p><span><i class="icon-location-2"></i></span> 198 West 21th Street, <br> Williamstown, NJ 08094</p>
+							</li>
+							<li>
+								<p><span><i class="icon-phone3"></i></span> <a href="tel://8564667020">+1 856-466-7020</a></p>
+							</li>
+							<li>
+								<p><span><i class="icon-paperplane"></i></span> <a href="mailto:info@yoursite.com">info@arnoldpatten.com</a></p>
+							</li>
+							<li>
+								<p><span><i class="icon-globe"></i></span> <a href="#">arnoldpatten.com</a></p>
+							</li>
+						</ul>
 					</div>
 				</div>
+
 				<div class="row">
 					<div class="col-md-12">
 						<p>
