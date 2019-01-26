@@ -51,17 +51,16 @@
                             <div class="blog-entry">
                                 {% if home.img %}
                                     <div class="blog-img">
-                                        <a href="{{ home.get_absolute_url }}"><img src="{{ home.img.url }}"
-                                                                                   class="img-responsive"
-                                                                                   alt="html5 bootstrap template"></a>
+                                        <a href="{{ home.get_absolute_url }}">
+                                            <img src="{{ home.img.url }}" class="img-responsive"
+                                                 alt="html5 bootstrap template"></a>
                                     </div>
                                 {% endif %}
 
                                 <div class="desc">
                                     <p class="meta">
-                                        <span id="for-sale" class="cat"><a href="#">For Sale</a></span>
-                                        <span class="date">Built: {{ home.year_built }}</span>
-                                        <span class="pos"><span class="date">Built: {{ home.year_built }}</span>
+                                        <span id="for-sale" class="cat"><a href="#">For Sale: ${{ home.cost }} </a></span>
+                                        <span class="pos">Built: {{ home.year_built }}
                                         <a href="#">{{ home.city }}, {{ home.state }} {{ home.zip_code }}</a></span>
                                     </p>
                                     <h2><a href="blog.html">{{ home.num_baths }}</a></h2>
@@ -311,33 +310,23 @@
                 </div>
                 <div class="row text-center">
                     <p><strong>Showing</strong> {{ paginator.per_page }} home listings per page</p>
-                    <div class="pagination">
-                            <span class="step-links">
-                            <ul class="pagination">
-                                {% if page_obj.has_previous %}
-                                    <li><a href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
-                                {% endif %}
-
-                                <span class="current">
-                                    Page {{ page_obj.number }} of {{ paginator.num_pages }}.
-                                </span>
-
-                                {% if page_obj.has_next %}
-                                    <li><a href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
-                                {% endif %}
-                                </ul>
-                                </span>
-                    </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <ul class="pagination">
-                            <li class="disabled"><a href="#">&laquo;</a></li>
-                            <li class="active"><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">&raquo;</a></li>
+                            {%  if page_obj.has_previous %}
+                            <li><a href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+                            {% endif %}
+                            {%  if page_obj.has_previous %}
+                            <li><a href="?page={{ page_obj.previous_page_number }}">{{ page_obj.previous_page_number }}</a></li>
+                            {% endif %}
+                            <li class="current"><a href="?page={{ page_obj.number }}">{{ page_obj.number }}</a></li>
+                        {% if page_obj.has_next %}
+                            <li><a href="?page={{ page_obj.next_page_number }}">{{ page_obj.next_page_number }}</a></li>
+                            {% endif %}
+                            {% if page_obj.has_next %}
+                            <li><a href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+                            {% endif %}
                         </ul>
                     </div>
                 </div>

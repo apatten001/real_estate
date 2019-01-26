@@ -13,36 +13,21 @@
 							</ul>
 						</p>
 					</div>
+                    {% if recent_articles %}
 					<div class="col-md-3">
 						<h2>Recent Post</h2>
-                        {% for article in recent_article %}
+                        {% for article in recent_articles %}
 						<div class="f-blog">
-							<a href="blog.html" class="blog-img"
+							<a href="{{ article.get_absolute_url }}" class="blog-img"
                                style="background-image: url({{ article.image }});">
-							</a>
 							<div class="desc">
-								<h3><a href="blog.html">{{ article.Title }}</a></h3>
-								<p class="admin"><span>{{ article.timestamp }}</span></p>
-							</div>
+								<h3><a href="{{ article.get_absolute_url }}">{{ article.Title }}</a></h3>
+								<p class="admin"><span>{{ article.timestamp | date:"M d Y"  }}</span></p>
+							</div></a>
 						</div>
                         {% endfor %}
-						<div class="f-blog">
-							<a href="blog.html" class="blog-img" style="background-image: url(../../static/stuff/images/blog-2.jpg);">
-							</a>
-							<div class="desc">
-								<h3><a href="blog.html">How to build website</a></h3>
-								<p class="admin"><span>24 March 2018</span></p>
-							</div>
-						</div>
-						<div class="f-blog">
-							<a href="blog.html" class="blog-img" style="background-image: url(../../static/stuff/images/blog-3.jpg);">
-							</a>
-							<div class="desc">
-								<h3><a href="blog.html">Create website</a></h3>
-								<p class="admin"><span>23 March 2018</span></p>
-							</div>
-						</div>
 					</div>
+                    {% endif %}
 					<div class="col-md-3">
 						<h2>Archive</h2>
 						<p>

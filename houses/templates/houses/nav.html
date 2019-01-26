@@ -23,8 +23,8 @@
                                 {% if user.is_authenticated %}
                                     <li><a href="{% url 'logout' %}">Logout</a></li>
                                 {% else %}
-                                    <li><a href="{% url 'login' %}">Login</a></li>
-								    <li><a href="{% url 'register' %}">Register</a></li>
+                                    <button style="border-radius: 10px; border-color: orangered"><a href="{% url 'login' %}">Login</a></button>
+								    <button style="border-radius: 10px; border-color: orangered"><a href="{% url 'register' %}">Register</a></button>
                                 {% endif %}
 							</ul>
 						</div>
