@@ -19,7 +19,7 @@
                         {% for article in recent_articles %}
 						<div class="f-blog">
 							<a href="{{ article.get_absolute_url }}" class="blog-img"
-                               style="background-image: url({{ article.image }});">
+                               style=" background-image: url({{ article.image.url }});">
 							<div class="desc">
 								<h3><a href="{{ article.get_absolute_url }}">{{ article.Title }}</a></h3>
 								<p class="admin"><span>{{ article.timestamp | date:"M d Y"  }}</span></p>
@@ -48,10 +48,10 @@
 								<p><span><i class="icon-location-2"></i></span> 198 West 21th Street, <br> Williamstown, NJ 08094</p>
 							</li>
 							<li>
-								<p><span><i class="icon-phone3"></i></span> <a href="tel://8564667020">+1 856-466-7020</a></p>
+								<p><span><i class="icon-phone3"></i></span> <a href="tel://8564667020">1(856)-466-7020</a></p>
 							</li>
 							<li>
-								<p><span><i class="icon-paperplane"></i></span> <a href="mailto:info@yoursite.com">info@arnoldpatten.com</a></p>
+								<p><span><i class="icon-paperplane"></i></span> <a href="mailto:apatten001@yahoo.com">apatten001@yahoo.com</a></p>
 							</li>
 							<li>
 								<p><span><i class="icon-globe"></i></span> <a href="#">arnoldpatten.com</a></p>
