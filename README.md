@@ -15,6 +15,9 @@ This project allows registered users to list and search homes that are for sale.
 ![forms](https://github.com/apatten001/real_estate/blob/master/github_images/Form-handling.png)
 3. CRUD functionality to create objects that are accessible to delete by registered users
 4. How to work with [Django RestFramework]('https://www.django-rest-framework.org') to build restful API's
+* ![apis](https://github.com/apatten001/real_estate/blob/master/github_images/api_shot.png)
+![apis](https://github.com/apatten001/real_estate/blob/master/github_images/api_shot2.png)
+
 5. How to integrate the backend logic with a already completed front-end template
 6. How to customize the admin pages for better access utilization of data
 7. Connecting a postgresql database
@@ -44,6 +47,17 @@ If you don't have virtual environment installed run ```pip install virtualenv```
 ### Usage
 
 This project usage was mainly for me to gain more knowledge and understanding about using the django framework and CRUD operation.     
+    
+    
+### API Endpoints
+
+
+API Endpoint | Description 
+--- | --- 
+*/api/v1/faqs* | `List of all the faqs`
+*/api/v1/houses* | `List of all house listings`
+*/api/v1/contacts* | `List of all contacts`
+*/api/v1/news* | `List of all news articles`
     
     
 ### Support 
