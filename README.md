@@ -2,7 +2,7 @@
 # Phillow
 
 This project allows registered users to list and search homes that are for sale. As well as create blog entries for the website.
-![Home]('https://github.com/apatten001/real_estate/blob/master/houses/static/houses/img/Phillow2.png')
+![Home](https://github.com/apatten001/real_estate/blob/master/houses/static/houses/img/Phillow2.png)
  
 ## Learning Points
 
@@ -16,16 +16,50 @@ This project allows registered users to list and search homes that are for sale.
 6. How to customize the admin pages for better access utilization of data
 7. Connecting a postgresql database
 8. Configure my secret key and other variables to be located outside my project. 
-9. Deploy the project to Heroku
-
-**Phillow Homepage**
+9. Version Control
+10.Deploy the project to Heroku
 
 
 ### Installation
 
 **To use this project:**
 
-```git clone```
+1. Clone the project
+```git clone https://github.com/apatten001/real_estate.git```
+2. Create an virtual environment for the project
+If you don't have virtual environment installed run ```pip install virtualenv```
+    
+    1. ```virtualenv venv```
+    2. ```source venv/bin/activate```
+    3. ```pip install -r requirements.txt```
+    4. ```deactivate```
+    
+### Usage
+
+This project usage was mainly for me to gain more knowledge and understanding about using the django framework and CRUD operation.     
+    
+    
+### Support 
+
+For support you can contact me at **apattten001@yahoo.com**   
+    
+
+### Future Updates
+
+1. Add a real estates websites API for the house listings     
+2. Add a real estate news API for the articles    
+    
+### Authors and Acknowledgements
+
+Arnold Patten @github/apatten001
+I want to thank Django and Django Rest framework for their awesome documentation 
+    
+    
+### Project Status
+
+Development has slowed down due to finishing outer projects for the curriculum 
+
+
  
 
   
