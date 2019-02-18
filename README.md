@@ -9,15 +9,22 @@ This project allows registered users to list and search homes that are for sale.
 **What I Learned**
 
 1. assisted with more practice using the MVC("MVT") architecture pattern.
+![MVC](https://github.com/apatten001/real_estate/blob/master/github%20images/MVC.png=250x250)
 2. Login and registration form handling
+![forms](https://github.com/apatten001/real_estate/blob/master/github%20images/forms.png=125x125)
+![forms](https://github.com/apatten001/real_estate/blob/master/github%20images/Form-handling.png=125x125)
 3. CRUD functionality to create objects that are accessible to delete by registered users
 4. How to work with [Django RestFramework]('https://www.django-rest-framework.org') to build restful API's
-5. How to integrate the backend login with a already completed front-end template
+5. How to integrate the backend logic with a already completed front-end template
 6. How to customize the admin pages for better access utilization of data
 7. Connecting a postgresql database
 8. Configure my secret key and other variables to be located outside my project. 
 9. Version Control
-10.Deploy the project to Heroku
+10. Import test data into the django shell 
+11. Deploy the project to Heroku
+![forms](https://github.com/apatten001/real_estate/blob/master/github%20images/heroku.png=250)
+
+
 
 
 ### Installation
