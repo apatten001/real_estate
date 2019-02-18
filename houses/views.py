@@ -27,7 +27,7 @@ class HomeListView(ListView):
     '''
 
     template_name = ['houses/homelisting_list.html', 'houses/footer.html']
-    paginate_by = 5
+    paginate_by = 8
 
     def get_context_data(self,*args, **kwargs):
         context = super(HomeListView, self).get_context_data(*args, **kwargs)
@@ -38,11 +38,8 @@ class HomeListView(ListView):
         context['delaware_homes'] = HomeListing.objects.filter(state__icontains='de')
         context['authors'] = Author.objects.filter(active=True)
         context['articles'] = NewsArticle.objects.all()
-        num = HomeListing.objects.all().aggregate(Avg('cost'), Max('cost'), Min('cost'))
-        context['avg_price'] = num.get('cost__avg')
-        context['max_price'] = num.get('cost__max')
-        context['min_price'] = num.get('cost__min')
         context['recent_articles'] = NewsArticle.objects.all()[:3]
+        context['count'] = HomeListing.objects.all().count()
 
         return context
 
