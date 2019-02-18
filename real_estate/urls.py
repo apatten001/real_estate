@@ -22,6 +22,7 @@ from rest_framework import routers
 from faqs.views import FAQViewSet
 from houses.views import HomeListingViewSet
 from contact.views import ContactViewSet
+from news.views import NewsArticleViewset
 
 
 router = routers.DefaultRouter()
@@ -29,6 +30,7 @@ router = routers.DefaultRouter()
 router.register(r'faqs', FAQViewSet)
 router.register(r'houses', HomeListingViewSet)
 router.register(r'contacts', ContactViewSet)
+router.register(r'news', NewsArticleViewset)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

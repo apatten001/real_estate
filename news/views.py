@@ -1,14 +1,21 @@
-from django.shortcuts import render,Http404
-from .models import Author,NewsArticle
+from django.shortcuts import render
+from .models import Author, NewsArticle
 from django.urls import reverse_lazy, reverse
 from django.views.generic import (CreateView, UpdateView,
                                   DeleteView, ListView, DetailView)
+from rest_framework import viewsets
+
 from .forms import ArticleForm
+from .serializers import NewsArticleSerializer
 from django.shortcuts import redirect
 from django.contrib import messages
 
 
 # Create your views here.
+
+class NewsArticleViewset(viewsets.ModelViewSet):
+    queryset = NewsArticle.objects.all()
+    serializer_class = NewsArticleSerializer
 
 
 class ArticleDetailView(DetailView):
