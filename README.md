@@ -2,7 +2,7 @@
 # Phillow
 
 This project allows registered users to list and search homes that are for sale. As well as create blog entries for the website.
- 
+![Home]('https://github.com/apatten001/real_estate/blob/master/houses/static/houses/img/Phillow2.png')
  
 ## Learning Points
 
@@ -18,6 +18,14 @@ This project allows registered users to list and search homes that are for sale.
 8. Configure my secret key and other variables to be located outside my project. 
 9. Deploy the project to Heroku
 
+**Phillow Homepage**
+
+
+### Installation
+
+**To use this project:**
+
+```git clone```
  
 
   
